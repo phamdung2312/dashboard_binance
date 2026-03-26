@@ -1,0 +1,52 @@
+{
+  "app": {
+    "title": "Crypto Market Dashboard",
+    "search": "Search symbol...",
+    "favorites": "Favorites",
+    "all": "All",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "noResults": "No results found",
+    "connected": "Connected",
+    "disconnected": "Disconnected"
+  },
+  "market": {
+    "symbol": "Symbol",
+    "price": "Price",
+    "change24h": "24h Change",
+    "high24h": "24h High",
+    "low24h": "24h Low",
+    "volume": "Volume",
+    "marketDashboard": "Market Dashboard",
+    "realTimeUpdates": "Real-time market data",
+    "gainers": "Gainers",
+    "losers": "Losers",
+    "totalTokens": "Tokens"
+  },
+  "detail": {
+    "tokenDetail": "Token Detail",
+    "interval": "Interval",
+    "open": "Open",
+    "high": "High",
+    "low": "Low",
+    "close": "Close",
+    "back": "Back to Market"
+  },
+  "settings": {
+    "theme": "Theme",
+    "language": "Language",
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "pagination": {
+    "rowsPerPage": "Rows per page",
+    "of": "of",
+    "tokens": "tokens",
+    "page": "Page",
+    "prev": "Prev",
+    "next": "Next",
+    "first": "First",
+    "last": "Last"
+  }
+}

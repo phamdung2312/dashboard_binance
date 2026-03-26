@@ -1,0 +1,52 @@
+{
+  "app": {
+    "title": "Bảng Giá Tiền Mã Hóa",
+    "search": "Tìm mã token...",
+    "favorites": "Yêu thích",
+    "all": "Tất cả",
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "noResults": "Không tìm thấy kết quả",
+    "connected": "Đã kết nối",
+    "disconnected": "Mất kết nối"
+  },
+  "market": {
+    "symbol": "Ký hiệu",
+    "price": "Giá",
+    "change24h": "Thay đổi 24h",
+    "high24h": "Cao nhất 24h",
+    "low24h": "Thấp nhất 24h",
+    "volume": "Khối lượng",
+    "marketDashboard": "Bảng Giá Thị Trường",
+    "realTimeUpdates": "Dữ liệu thị trường thời gian thực",
+    "gainers": "Tăng giá",
+    "losers": "Giảm giá",
+    "totalTokens": "Token"
+  },
+  "detail": {
+    "tokenDetail": "Chi Tiết Token",
+    "interval": "Khung thời gian",
+    "open": "Mở",
+    "high": "Cao",
+    "low": "Thấp",
+    "close": "Đóng",
+    "back": "Quay lại Thị Trường"
+  },
+  "settings": {
+    "theme": "Giao diện",
+    "language": "Ngôn ngữ",
+    "dark": "Tối",
+    "light": "Sáng"
+  },
+  "pagination": {
+    "rowsPerPage": "Số hàng mỗi trang",
+    "of": "trên",
+    "tokens": "token",
+    "page": "Trang",
+    "prev": "Trước",
+    "next": "Sau",
+    "first": "Đầu",
+    "last": "Cuối"
+  }
+}
