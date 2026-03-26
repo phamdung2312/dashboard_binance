@@ -1,4 +1,5 @@
-const WS_BASE_URL = "wss://stream.binance.com:9443/ws";
+const WS_BASE_URL =
+  import.meta.env.VITE_WS_BASE_URL ?? "wss://stream.binance.com:9443/ws";
 
 interface WebSocketManagerOptions {
   url: string;

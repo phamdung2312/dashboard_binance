@@ -48,7 +48,7 @@ const MarketTable: React.FC<MarketTableProps> = observer(
     const borderColor = isDark ? "border-[#2b2f36]" : "border-gray-200";
     const textPrimary = isDark ? "text-[#eaecef]" : "text-gray-900";
     const textSecondary = isDark ? "text-[#848e9c]" : "text-gray-500";
-    const showLoading = store.isLoading && store.tickers.size === 0;
+    const showLoading = store.tickers.size === 0;
 
     return (
       <div className={`${cardBg} border ${borderColor} rounded-xl`}>
@@ -102,57 +102,53 @@ const MarketTable: React.FC<MarketTableProps> = observer(
         )}
 
         {/* ── Table ── */}
-        {showLoading ? (
-          <div className="p-4">
-            <LoadingSkeleton />
-          </div>
-        ) : (
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[480px]">
-              <TickerTableHeader />
-              <tbody>
-                {filteredTickers.length === 0 ? (
-                  <tr>
-                    <td
-                      colSpan={7}
-                      className={`text-center py-16 ${textSecondary}`}
-                    >
-                      <div className="flex flex-col items-center gap-2">
-                        <svg
-                          className="w-10 h-10 opacity-30"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={1.5}
-                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span className="text-sm">
-                          {store.tickers.size === 0
-                            ? t("app.loading")
-                            : t("app.noResults")}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                ) : (
-                  pagedTickers.map((ticker) => (
-                    <TickerRow
-                      key={ticker.symbol}
-                      ticker={ticker}
-                      isFavorite={store.favorites.has(ticker.symbol)}
-                      onToggleFavorite={onToggleFavorite}
-                    />
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
-        )}
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[480px]">
+            <TickerTableHeader />
+            <tbody>
+              {showLoading ? (
+                <LoadingSkeleton />
+              ) : filteredTickers.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan={7}
+                    className={`text-center py-16 ${textSecondary}`}
+                  >
+                    <div className="flex flex-col items-center gap-2">
+                      <svg
+                        className="w-10 h-10 opacity-30"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span className="text-sm">
+                        {store.tickers.size === 0
+                          ? t("app.loading")
+                          : t("app.noResults")}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ) : (
+                pagedTickers.map((ticker) => (
+                  <TickerRow
+                    key={ticker.symbol}
+                    ticker={ticker}
+                    isFavorite={store.favorites.has(ticker.symbol)}
+                    onToggleFavorite={onToggleFavorite}
+                  />
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
 
         {/* ── Pagination ── */}
         {!showLoading && filteredTickers.length > 0 && (

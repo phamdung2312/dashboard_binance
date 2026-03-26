@@ -1,20 +1,48 @@
 import React from "react";
 
-const LoadingSkeleton: React.FC = () => {
+interface LoadingSkeletonProps {
+  rows?: number;
+}
+
+const LoadingSkeleton: React.FC<LoadingSkeletonProps> = ({ rows = 10 }) => {
   return (
-    <div className="animate-pulse space-y-3">
-      {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} className="flex items-center space-x-4 px-4 py-3">
-          <div className="w-6 h-6 bg-gray-700 rounded" />
-          <div className="w-24 h-4 bg-gray-700 rounded" />
-          <div className="w-20 h-4 bg-gray-700 rounded" />
-          <div className="w-16 h-4 bg-gray-700 rounded" />
-          <div className="w-20 h-4 bg-gray-700 rounded hidden md:block" />
-          <div className="w-20 h-4 bg-gray-700 rounded hidden md:block" />
-          <div className="w-16 h-4 bg-gray-700 rounded hidden lg:block" />
-        </div>
+    <>
+      {Array.from({ length: rows }).map((_, i) => (
+        <tr key={i} className="border-b border-[#2b2f36] animate-pulse">
+          {/* Star */}
+          <td className="px-3 sm:px-4 py-3 w-10">
+            <div className="w-4 h-4 bg-[#2b2f36] rounded" />
+          </td>
+          {/* Symbol */}
+          <td className="px-3 sm:px-4 py-3">
+            <div className="flex items-center gap-2">
+              <div className="hidden sm:block w-7 h-7 bg-[#2b2f36] rounded-full shrink-0" />
+              <div className="w-20 h-4 bg-[#2b2f36] rounded" />
+            </div>
+          </td>
+          {/* Price */}
+          <td className="px-3 sm:px-4 py-3">
+            <div className="w-24 h-4 bg-[#2b2f36] rounded" />
+          </td>
+          {/* Change 24h */}
+          <td className="px-3 sm:px-4 py-3">
+            <div className="w-16 h-6 bg-[#2b2f36] rounded" />
+          </td>
+          {/* High */}
+          <td className="px-3 sm:px-4 py-3 hidden md:table-cell">
+            <div className="w-20 h-4 bg-[#2b2f36] rounded" />
+          </td>
+          {/* Low */}
+          <td className="px-3 sm:px-4 py-3 hidden md:table-cell">
+            <div className="w-20 h-4 bg-[#2b2f36] rounded" />
+          </td>
+          {/* Volume */}
+          <td className="px-3 sm:px-4 py-3 hidden lg:table-cell text-right">
+            <div className="w-20 h-4 bg-[#2b2f36] rounded ml-auto" />
+          </td>
+        </tr>
       ))}
-    </div>
+    </>
   );
 };
 

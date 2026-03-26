@@ -1,6 +1,7 @@
 import { ExchangeInfoResponse, Kline, KlineInterval } from "../types";
 
-const BASE_URL = "https://api.binance.com/api/v3";
+const BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? "https://api.binance.com/api/v3";
 
 export async function fetchExchangeInfo(): Promise<ExchangeInfoResponse> {
   const response = await fetch(`${BASE_URL}/exchangeInfo`);
