@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { observer } from "mobx-react-lite";
 import { getSettingsStore, toggleTheme, setLanguage } from "../stores/settings";
 import { Language } from "../types";
+import logo from "../images/app_dashboard_binance.png";
 
 const Header: React.FC = observer(() => {
   const { t, i18n } = useTranslation();
@@ -28,7 +29,7 @@ const Header: React.FC = observer(() => {
           }`}
         >
           <img
-            src="/src/images/app_dashboard_binance.png"
+            src={logo}
             alt="logo"
             className="w-8 h-8 sm:w-12 sm:h-12 object-contain"
           />
